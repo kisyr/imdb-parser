@@ -34,16 +34,16 @@
 
 namespace imdb {
 
-bool operator==(const std::string lhs, const std::string& rhs)
-{
-    return std::operator==(to_upper(lhs), to_upper(rhs));
-}
-
 std::string to_upper(const std::string& string)
 {
     std::string string_upp;
     std::transform(string.begin(), string.end(), std::back_inserter(string_upp), toupper);
     return string_upp;
+}
+
+bool operator==(const std::string lhs, const std::string& rhs)
+{
+    return std::operator==(to_upper(lhs), to_upper(rhs));
 }
 
 bool find(const std::string& string, const std::string& pattern)
